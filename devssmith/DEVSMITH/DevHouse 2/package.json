@@ -1,0 +1,59 @@
+{
+  "name": "dev---smith",
+  "displayName": "DEV://SMITH",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onSelectionChange"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+
+    "webview": {
+      "contentSecurityPolicy": {
+        "contentSecurityPolicy": {
+          "extensionPath": "C:/Users/smdmu/OneDrive/Desktop/devshouse",
+          "script-src": ["'self'", "'unsafe-inline'", "vscode-resource:"]
+      },
+  
+       "object-src": ["'self'", "vscode-webview:"],
+        "frame-src": ["'self'", "vscode-webview:"]
+      }
+    },
+    "commands": [
+      {
+        "command": "test.showWebview",
+        "title": "Show Webview"
+      },
+      {
+        "command": "test.showAIAssistant",
+        "title": "Show AI Assistant"
+      }
+    ]
+    
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.87.0",
+    "@vscode/test-cli": "^0.0.6",
+    "@vscode/test-electron": "^2.3.9",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "@google/generative-ai": "0.3.0"
+  },
+  "dependencies": {
+    "@vscode/webview-ui-toolkit": "^1.4.0"
+  }
+}
